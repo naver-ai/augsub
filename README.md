@@ -7,11 +7,11 @@
 [NAVER AI LAB](https://naver-career.gitbook.io/en/teams/clova-cic/ai-lab)
 
 
-[![Paper](https://img.shields.io/badge/Paper-arxiv.xxxx.xxxxx-green)](https://arxiv.org/abs/xxxx.xxxxx)
+[![Paper](https://img.shields.io/badge/Paper-arxiv.2306.11339-green)](https://arxiv.org/abs/2306.11339)
 
 </div>
 
-Official PyTorch implementation of AugSub "Augmenting Sub-model to Improve Main Model" | [arxiv](https://arxiv.org/abs/xxxx.xxxxx).
+Official PyTorch implementation of AugSub "Augmenting Sub-model to Improve Main Model" | [arxiv](https://arxiv.org/abs/2306.11339).
 
 ## Abstract
 
@@ -21,11 +21,11 @@ Image classification has improved with the development of training techniques. H
 
 ## Updates
 
-- **Jun xx, 2023**: Arxiv paper released
+- **Jun 21, 2023**: Arxiv paper released
 
 ## Getting Started
 
-AugSub applied to follwoing codebases will be released soon.
+AugSub applied to following codebases will be released soon.
 
 - DeiT-III training *"DeiT III: Revenge of the ViT"* [original repo](https://github.com/facebookresearch/deit)
 - MAE finetuning *"Masked Autoencoders Are Scalable Vision Learners"* [original repo](https://github.com/facebookresearch/mae)
@@ -93,6 +93,6 @@ AugSub applied to follwoing codebases will be released soon.
     title={Augmenting Sub-model to Improve Main Model},
     author={Heo, Byeongho and Kim, Taekyung and Yun, Sangdoo and Han, Dongyoon},
     year={2023},
-    journal={arXiv preprint arXiv:xxxx.xxxxx},
+    journal={arXiv preprint arXiv:2306.11339},
 }
 ```
