@@ -34,7 +34,7 @@ You can find AugSub training command at each folder.
 
 ## Method preview
 
-<img src="figures/preview.jpg" alt="Preview" style="width: 100%; height: auto;"/>
+<img src="preview_picture.jpg" alt="Preview" style="width: 100%; height: auto;"/>
 
 ### Pseudo-code for AugSub
 It shows basic mechanism of AugSub with simple code.
