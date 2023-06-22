@@ -46,10 +46,10 @@ OMP_NUM_THREADS=1 python -m torch.distributed.launch --nproc_per_node=8 --nnodes
     --cooldown-epochs 0 \
     --smoothing 0.0 \
     --drop 0.0 \
-    --drop-path 0.0 \
+    --drop-path 0.05 \
     --aug-repeats 3 \
     --aa rand-m7-mstd0.5 \
-    --mixup 0.0 \
+    --mixup 0.1 \
     --cutmix 1.0 \
     --reprob 0.0 \
     --color-jitter 0.0 \
