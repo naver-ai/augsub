@@ -1,6 +1,6 @@
 <div align="center">
 
-# Augmenting Sub-model to Improve Main Model
+# Masking Augmentation for Supervised Learning
 
 **[Byeongho Heo](https://sites.google.com/view/byeongho-heo/home), [Taekyung Kim](https://tkkim93.github.io/), [Sangdoo Yun](https://sangdooyun.github.io/), [Dongyoon Han](https://sites.google.com/site/dyhan0920/)** <br>
 
@@ -13,21 +13,22 @@
 
 </div>
 
-Official PyTorch implementation of AugSub "Augmenting Sub-model to Improve Main Model" | [arxiv](https://arxiv.org/abs/2306.11339).
+Official PyTorch implementation of MaskSub "Masking Augmentation for Supervised Learning" | [arxiv](https://arxiv.org/abs/2306.11339).
 
 ### Abstract
 
-Image classification has improved with the development of training techniques. However, these techniques often require careful parameter tuning to balance the strength of regularization, limiting their potential benefits. In this paper, we propose a novel way to use regularization called Augmenting Sub-model (AugSub). AugSub consists of two models: the main model and the sub-model. While the main model employs conventional training recipes, the sub-model leverages the benefit of additional regularization. AugSub achieves this by mitigating adverse effects through a relaxed loss function similar to self-distillation loss. We demonstrate the effectiveness of AugSub with three drop techniques: dropout, drop-path, and random masking. Our analysis shows that all AugSub improves performance, with the training loss converging even faster than regular training. Among the three, AugMask is identified as the most practical method due to its performance and cost efficiency. We further validate AugMask across diverse training recipes, including DeiT-III, ResNet, MAE fine-tuning, and Swin Transformer. The results show that AugMask consistently provides significant performance gain. AugSub provides a practical and effective solution for introducing additional regularization under various training recipes.
+Pre-training using random masking has emerged as a novel trend in training techniques. However, supervised learning faces a challenge in adopting masking augmentations, primarily due to unstable training. In this paper, we propose a novel way to involve masking augmentations dubbed Masked Sub-model (MaskSub). MaskSub consists of the main-model and sub-model; while the former enjoys conventional training recipes, the latter leverages the benefit of strong masking augmentations in training. MaskSub addresses the challenge by mitigating adverse effects through a relaxed loss function similar to a self-distillation loss. Our analysis shows that MaskSub improves performance, with the training loss converging even faster than regular training, which suggests our method facilitates training. We further validate MaskSub across diverse training recipes and models, including DeiT-III, MAE fine-tuning, CLIP fine-tuning, ResNet, and Swin Transformer. Our results show that MaskSub consistently provides significant performance gains across all the cases. MaskSub provides a practical and effective solution for introducing additional regularization under various training recipes.
 
 
 ## Updates
 
+- **Feb 28, 2024**: Arxiv paper update
 - **Jun 21, 2023**: Codes for deit, mae, swin, and resnet are released
 - **Jun 21, 2023**: Arxiv paper is released
 
 ## Getting Started
 
-You can find AugSub training command at each folder.
+You can find MaskSub training command at each folder.
 
 - `deit/`   : DeiT-III training *"DeiT III: Revenge of the ViT"* [original repo](https://github.com/facebookresearch/deit)
 - `mae/` : MAE finetuning *"Masked Autoencoders Are Scalable Vision Learners"* [original repo](https://github.com/facebookresearch/mae)
@@ -38,8 +39,8 @@ You can find AugSub training command at each folder.
 
 <img src="preview_picture.jpg" alt="Preview" style="width: 100%; height: auto;"/>
 
-### Pseudo-code for AugSub
-It shows basic mechanism of AugSub with simple code.
+### Pseudo-code for MaskSub
+It shows basic mechanism of MaskSub with simple code.
 ```python
 # For drop probability p
 for (x, y) in data_loader:
@@ -50,7 +51,7 @@ for (x, y) in data_loader:
     optimizer.step()
 ```
 
-### Practical code for AugMask 50\%
+### Practical code for MaskSub 50\%
 In practice, we use gradient accumulation technique to prevent GPU memory issues. Also, we use `loss_scaler` for mixed precision.
 ```python
 for (x, y) in data_loader:
@@ -72,7 +73,7 @@ for (x, y) in data_loader:
 
 ### DeiT-III
 
-| Architecture | # params | FLOPs  | 400 epochs  |    + AugMask    | 800 epochs |    + AugMask    |
+| Architecture | # params | FLOPs  | 400 epochs  |    + MaskSub    | 800 epochs |    + MaskSub    |
 |:------------:|:--------:|:------:|:-----------:|:---------------:|:----------:|:---------------:|
 | ViT-S/16     | 22.0 M   | 4.6 G  | 80.4        | **81.1 (+0.7)** | 81.4      | **81.7 (+0.3)** |
 | ViT-B/16     | 86.6 M   | 17.5 G | 83.5        | **84.1 (+0.6)** | 83.8      | **84.2 (+0.4)** |
@@ -82,7 +83,7 @@ for (x, y) in data_loader:
 
 ### MAE finetuning
 
-| Architecture | Finetuning Epochs | Baseline |    + AugMask    |
+| Architecture | Finetuning Epochs | Baseline |    + MaskSub    |
 |:------------:|:-----------------:|:--------:|:---------------:|
 | ViT-B/16     | 100               | 83.6     | **83.9 (+0.3)** |
 | ViT-L/16     | 50                | 85.9     | **86.1 (+0.2)** |
@@ -91,7 +92,7 @@ for (x, y) in data_loader:
 
 ### Swin Transformer
 
-| Architecture | # Params | FLOPs | Baseline |    + AugMask    |
+| Architecture | # Params | FLOPs | Baseline |    + MaskSub    |
 | :---: | :---: | :---: | :---: |:---------------:|
 | Swin-T | 28.3 M | 4.5 G | 81.3 | **81.4 (+0.1)** |
 | Swin-S | 49.6 M | 8.7 G | 83.0 | **83.4 (+0.4)** |
@@ -100,7 +101,7 @@ for (x, y) in data_loader:
 
 ### ResNet
 
-| Architecture | # Params | FLOPs | Baseline |    + AugMask    |
+| Architecture | # Params | FLOPs | Baseline |    + MaskSub    |
 | :---: | :---: | :---: | :---: |:---------------:|
 | ResNet50 | 25.6 M | 4.1 G | 79.7 | **80.0 (+0.3)** |
 | ResNet101 | 44.5 M | 7.9 G | 81.4 | **82.1 (+0.7)** |
@@ -120,8 +121,8 @@ CC BY-NC-4.0 (https://creativecommons.org/licenses/by-nc/4.0/)
 ## How to cite
 
 ```
-@article{heo2023augsub,
-    title={Augmenting Sub-model to Improve Main Model},
+@article{heo2023masksub,
+    title={Masking Augmentation for Supervised Learning},
     author={Heo, Byeongho and Kim, Taekyung and Yun, Sangdoo and Han, Dongyoon},
     year={2023},
     journal={arXiv preprint arXiv:2306.11339},

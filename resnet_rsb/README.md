@@ -11,14 +11,14 @@ timm==0.5.4
 
 ### Performance
 
-| Architecture | # Params | FLOPs | Baseline |    + AugMask    |
+| Architecture | # Params | FLOPs | Baseline |    + MaskSub    |
 | :---: | :---: | :---: | :---: |:---------------:|
 | ResNet50 | 25.6 M | 4.1 G | 79.7 | **80.0 (+0.3)** |
 | ResNet101 | 44.5 M | 7.9 G | 81.4 | **82.1 (+0.7)** |
 | ResNet152 | 60.2 M | 11.6 G | 81.8 | **82.8 (+1.0)** |
 
 
-### AugMask training commands
+### MaskSub training commands
 - Enviroment variables
   ```bash
   data_path=/your/path/to/imagenet

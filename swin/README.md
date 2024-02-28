@@ -12,13 +12,13 @@ timm==0.3.2
 
 ### Performance
 
-| Architecture | # Params | FLOPs | Baseline |    + AugMask    |
+| Architecture | # Params | FLOPs | Baseline |    + MaskSub    |
 | :---: | :---: | :---: | :---: |:---------------:|
 | Swin-T | 28.3 M | 4.5 G | 81.3 | **81.4 (+0.1)** |
 | Swin-S | 49.6 M | 8.7 G | 83.0 | **83.4 (+0.4)** |
 | Swin-B | 87.9 M | 15.4 G | 83.5 | **83.9 (+0.4)** |
 
-### AugMask training commands
+### MaskSub training commands
 - Enviroment variables
   ```bash
   data_path=/your/path/to/imagenet

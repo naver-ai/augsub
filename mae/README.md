@@ -12,13 +12,13 @@ timm==0.3.2
 
 ### Performance
 
-| Architecture | Finetuning Epochs | Baseline |    + AugMask    |
+| Architecture | Finetuning Epochs | Baseline |    + MaskSub    |
 |:------------:|:-----------------:|:--------:|:---------------:|
 | ViT-B/16     | 100               | 83.6     | **83.9 (+0.3)** |
 | ViT-L/16     | 50                | 85.9     | **86.1 (+0.2)** |
 | ViT-H/14     | 50                | 86.9     | **87.2 (+0.3)** |
 
-### AugMask finetuning commands
+### MaskSub finetuning commands
 
 Finetuning requires MAE pretrained weights. Please download MAE weights from [original repository](https://github.com/facebookresearch/mae)
 

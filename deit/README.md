@@ -11,14 +11,14 @@ timm==0.3.2
 
 ### Performances
 
-| Architecture | # params | FLOPs  | 400 epochs  |    + AugMask    | 800 epochs |    + AugMask    |
+| Architecture | # params | FLOPs  | 400 epochs  |    + MaskSub    | 800 epochs |    + MaskSub    |
 |:------------:|:--------:|:------:|:-----------:|:---------------:|:----------:|:---------------:|
 | ViT-S/16     | 22.0 M   | 4.6 G  | 80.4        | **81.1 (+0.7)** | 81.4      | **81.7 (+0.3)** |
 | ViT-B/16     | 86.6 M   | 17.5 G | 83.5        | **84.1 (+0.6)** | 83.8      | **84.2 (+0.4)** |
 | ViT-L/16     | 304.4 M  | 61.6 G | 84.5        | **85.2 (+0.7)** | 84.9      | **85.3 (+0.4)** |
 | ViT-H/14     | 632.1 M  | 167.4 G| 85.1        | **85.7 (+0.6)** | 85.2      | **85.7 (+0.5)** |
 
-### AugMask training commands
+### MaskSub training commands
 - Enviroment variables
     ```bash
     data_path=/your/path/to/imagenet
