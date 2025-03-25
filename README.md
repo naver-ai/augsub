@@ -1,27 +1,30 @@
 <div align="center">
 
-# Masking Augmentation for Supervised Learning
+# Masking meets Supervision: A Strong Learning Alliance
 
 **[Byeongho Heo](https://sites.google.com/view/byeongho-heo/home), [Taekyung Kim](https://tkkim93.github.io/), [Sangdoo Yun](https://sangdooyun.github.io/), [Dongyoon Han](https://sites.google.com/site/dyhan0920/)** <br>
 
 [NAVER AI LAB](https://naver-career.gitbook.io/en/teams/clova-cic/ai-lab)
 
+[![Paper](https://img.shields.io/badge/Paper-arxiv-green)](https://arxiv.org/abs/2306.11339)
+[![Paper](https://img.shields.io/badge/Paper-CVPR_2025-blue)](https://cvpr.thecvf.com/virtual/2025/poster/35257)
 [![CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://github.com/naver-ai/augsub/blob/main/LICENSE)
-[![Paper](https://img.shields.io/badge/Paper-arxiv.2306.11339-green)](https://arxiv.org/abs/2306.11339)
+
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/augmenting-sub-model-to-improve-main-model/self-supervised-image-classification-on-1)](https://paperswithcode.com/sota/self-supervised-image-classification-on-1?p=augmenting-sub-model-to-improve-main-model)
 
 </div>
 
-Official PyTorch implementation of MaskSub "Masking Augmentation for Supervised Learning" | [arxiv](https://arxiv.org/abs/2306.11339).
+Official PyTorch implementation of MaskSub "Masking meets Supervision: A Strong Learning Alliance" | [arxiv](https://arxiv.org/abs/2306.11339).
 
 ### Abstract
 
-Pre-training using random masking has emerged as a novel trend in training techniques. However, supervised learning faces a challenge in adopting masking augmentations, primarily due to unstable training. In this paper, we propose a novel way to involve masking augmentations dubbed Masked Sub-model (MaskSub). MaskSub consists of the main-model and sub-model; while the former enjoys conventional training recipes, the latter leverages the benefit of strong masking augmentations in training. MaskSub addresses the challenge by mitigating adverse effects through a relaxed loss function similar to a self-distillation loss. Our analysis shows that MaskSub improves performance, with the training loss converging even faster than regular training, which suggests our method facilitates training. We further validate MaskSub across diverse training recipes and models, including DeiT-III, MAE fine-tuning, CLIP fine-tuning, ResNet, and Swin Transformer. Our results show that MaskSub consistently provides significant performance gains across all the cases. MaskSub provides a practical and effective solution for introducing additional regularization under various training recipes.
-
+Pre-training with random masked inputs has emerged as a novel trend in self-supervised training. However, supervised learning still faces a challenge in adopting masking augmentations, primarily due to unstable training. In this paper, we propose a novel way to involve masking augmentations dubbed Masked Sub-branch (MaskSub). MaskSub consists of the main-branch and sub-branch, the latter being a part of the former. The main-branch undergoes conventional training recipes, while the sub-branch merits intensive masking augmentations, during training. MaskSub tackles the challenge by mitigating adverse effects through a relaxed loss function similar to a self-distillation loss. Our analysis shows that MaskSub improves performance, with the training loss converging faster than in standard training, which suggests our method stabilizes the training process. We further validate MaskSub across diverse training scenarios and models, including DeiT-III training, MAE finetuning, CLIP finetuning, BERT training, and hierarchical architectures (ResNet and Swin Transformer). Our results show that MaskSub consistently achieves impressive performance gains across all the cases. MaskSub provides a practical and effective solution for introducing additional regularization under various training recipes.
 
 ## Updates
 
+- **Mar 25, 2025**: Arxiv & README update
+- **Feb 27, 2025**: Accepted to CVPR 2025
 - **Feb 28, 2024**: Arxiv paper update
 - **Jun 21, 2023**: Codes for deit, mae, swin, and resnet are released
 - **Jun 21, 2023**: Arxiv paper is released
@@ -121,10 +124,10 @@ CC BY-NC-4.0 (https://creativecommons.org/licenses/by-nc/4.0/)
 ## How to cite
 
 ```
-@article{heo2023masksub,
-    title={Masking Augmentation for Supervised Learning},
+@inproceedings{heo2023masksub,
+    title={Masking meets Supervision: A Strong Learning Alliance},
     author={Heo, Byeongho and Kim, Taekyung and Yun, Sangdoo and Han, Dongyoon},
-    year={2023},
-    journal={arXiv preprint arXiv:2306.11339},
+    year={2025},
+    booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition},
 }
 ```
